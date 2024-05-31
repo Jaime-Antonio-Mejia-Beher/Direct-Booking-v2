@@ -8,12 +8,12 @@ function Header() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Your Property Name
+        <Typography variant="h4" style={{ flexGrow: 1 }}>
+          CAASITAAS
         </Typography>
-        <Button color="inherit">Home</Button>
+        {/* <Button color="inherit">Home</Button>
         <Button color="inherit">Book Now</Button>
-        <Button color="inherit">Contact</Button>
+        <Button color="inherit">Contact</Button> */}
       </Toolbar>
     </AppBar>
   );

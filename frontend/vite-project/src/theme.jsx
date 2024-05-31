@@ -1,13 +1,13 @@
 import { createTheme } from "@mui/material/styles";
+import { green, blueGrey, deepOrange, red } from "@mui/material/colors"; // Ensure you import colors from @mui/material/colors
 
 const theme = createTheme({
   palette: {
-    mode: "light",
     primary: {
-      main: "#007bff",
+      main: red[400], // Use green color for primary
     },
     secondary: {
-      main: "#ff4081",
+      main: blueGrey[500], // Use blue-grey color for secondary
     },
     background: {
       default: "#ffffff",

@@ -6,7 +6,7 @@ function Footer() {
   return (
     <Box sx={{ bgcolor: "primary.main", p: 2, mt: "auto" }} component="footer">
       <Typography variant="body1" color="inherit">
-        &copy; {new Date().getFullYear()} Your Property Name
+        &copy; {new Date().getFullYear()} Caasitaas LLC
       </Typography>
     </Box>
   );
