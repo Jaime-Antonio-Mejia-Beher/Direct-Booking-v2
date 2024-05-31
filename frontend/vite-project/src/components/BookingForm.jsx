@@ -10,7 +10,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
-import axios from "axios";
+import { createBooking, registerUser } from "../api";
 
 function BookingForm() {
   const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ function BookingForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/bookings", formData);
+      const response = await createBooking(formData);
       console.log(response.data);
       setOpen(true); // Open the signup dialog after successful booking
     } catch (err) {
@@ -54,7 +54,7 @@ function BookingForm() {
 
   const handleSignupSubmit = async () => {
     try {
-      const response = await axios.post("/api/auth/register", signupData);
+      const response = await registerUser(signupData);
       console.log(response.data);
       setOpen(false); // Close the signup dialog after successful signup
     } catch (err) {
