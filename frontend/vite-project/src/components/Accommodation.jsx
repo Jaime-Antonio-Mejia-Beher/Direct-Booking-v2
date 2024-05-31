@@ -3,30 +3,41 @@ import {
   Grid,
   Typography,
   Card,
-  CardMedia,
   CardContent,
   CardActions,
   Button,
   Box,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const Accommodation = ({ title, description, img, link, price, city }) => {
+const Accommodation = ({ description, img, link, price, city, images }) => {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Card>
-        <CardMedia
-          component="img"
-          alt={title}
-          height="300"
-          image={img}
-          title={title}
-        />
+        <ImageList sx={{ width: "100%", height: 300 }} cols={3} rowHeight={164}>
+          {images.map((image, index) => (
+            <ImageListItem key={index}>
+              <img
+                src={image}
+                alt={`Gallery image ${index + 1}`}
+                loading="lazy"
+              />
+              <ImageListItemBar
+                title={`Gallery image ${index + 1}`}
+                position="below"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
         <CardContent sx={{ padding: "12px 12px 0px 12px " }}>
           <Typography
             gutterBottom
             variant="h6"
             component="div"
-            sx={{ margin: "0" }}
+            sx={{ margin: "0", height: "60px" }}
           >
             {description}
           </Typography>
@@ -44,7 +55,12 @@ const Accommodation = ({ title, description, img, link, price, city }) => {
             <Typography variant="h5" color="text.primary">
               {price}
             </Typography>
-            <Button variant='contained' color="primary" href={link}>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to={link}
+            >
               View Details
             </Button>
           </Box>

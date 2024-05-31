@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Basement from "./pages/Basement";
+import Upstairs from "./pages/Upstairs";
+import Cupertino from "./pages/Cupertino";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/basement" element={<Basement />} />
+          <Route path="/upstairs" element={<Upstairs />} />
+          <Route path="/cupertino" element={<Cupertino />} />
         </Routes>
       </main>
       <Footer />
