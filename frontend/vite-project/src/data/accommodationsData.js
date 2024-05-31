@@ -3,7 +3,7 @@ const accommodations = [
     id: "basement",
     description:
       "Ping-Pong | King Bed | DIA Airport | Kitchenette | Private | Denver, CO",
-    img: "/public/basement/image1.jpg",
+    img: "/public/basement/Collage.jpg",
     link: "/basement",
     price: "$99",
     city: "Denver, CO",
@@ -40,10 +40,9 @@ const accommodations = [
   },
   {
     id: "cupertino",
-    description:
-      "Low Cleaning Fee | DIA Airport | Patio | 4 Bed 3 Bath | Denver, CO",
-    img: "/public/cupertino/image1.jpg",
-    link: "/upstairs",
+    description: "Private Unit | Kitchen | Cupertino, CA",
+    img: "/public/cupertino/Collage.png",
+    link: "/cupertino",
     price: "$99",
     city: "Cupertino, CA",
     images: [
@@ -78,11 +77,12 @@ const accommodations = [
   },
   {
     id: "upstairs",
-    description: "Private Unit | Full Kitchen | King Bed | Cupertino, CA",
-    img: "/public/upstairs/image1.jpg",
-    link: "/cupertino",
+    description:
+      "Low Cleaning Fee | DIA Airport | Patio | | 4 Bed 3 Bath | Denver, CO",
+    img: "/public/upstairs/backgroundimage.jpg",
+    link: "/upstairs",
     price: "$99",
-    city: "Cupertino, CA",
+    city: " Denver, CO",
     images: [
       "backgroundimage.jpg",
       "BathBed2.jpg",

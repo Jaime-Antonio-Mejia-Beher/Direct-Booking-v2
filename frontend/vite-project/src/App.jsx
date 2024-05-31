@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Basement from "./pages/Basement";
 import Upstairs from "./pages/Upstairs";
@@ -19,7 +19,7 @@ function App() {
           <Route path="/cupertino" element={<Cupertino />} />
         </Routes>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }
