@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 function App() {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -17,7 +17,7 @@ function App() {
           <Route path="/login" component={Login} />
         </Switch>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }
