@@ -51,7 +51,7 @@ const MultiRowImageCarousel = ({ images }) => {
     <Box sx={{ my: 4, position: "relative" }}>
       <Slider {...settings}>
         {images.map((image, index) => (
-          <Box key={index} sx={{ padding: "0 8px" }}>
+          <Box key={index} sx={{ padding: "0 18px", margin: '0' }}>
             <img
               src={image}
               alt={`slide ${index}`}

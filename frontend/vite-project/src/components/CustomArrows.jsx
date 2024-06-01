@@ -27,7 +27,7 @@ export const NextArrow = (props) => {
   const { style, onClick } = props;
   return (
     <Box
-      sx={{ ...arrowStyles, right: "-60px" }} // Move further to the edge
+      sx={{ ...arrowStyles, right: "-30px" }} // Move further to the edge
       onClick={onClick}
     >
       <ArrowForwardIosIcon />
@@ -39,7 +39,7 @@ export const PrevArrow = (props) => {
   const { style, onClick } = props;
   return (
     <Box
-      sx={{ ...arrowStyles, left: "-60px" }} // Move further to the edge
+      sx={{ ...arrowStyles, left: "-30px" }} // Move further to the edge
       onClick={onClick}
     >
       <ArrowBackIosIcon />
