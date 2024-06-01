@@ -37,18 +37,40 @@ const accommodations = [
     ].map((image) => `/cupertino/${image}`),
     reviews: [
       {
-        name: "Jane Smith",
-        date: "April 5, 2023",
-        comment: "Lovely stay, close to everything we needed.",
-        avatar: "",
-        city: "Denver, CO",
+        name: "Heather",
+        date: "February 2024",
+        comment:
+          "This place is great! It has everything you need - the kitchen especially is super stocked if you need to cook! Jaime was super friendly and checked in each day to see if there was anything that could be done to make our stay better! The place is private and felt very safe. The bed is super comfy!! We had a great stay here.",
+        avatar:
+          "https://a0.muscache.com/im/pictures/user/e7340ce5-6a8f-4584-a8f9-0e96160497a0.jpg?im_w=240",
+        city: "8 years on Airbnb",
       },
       {
-        name: "Jane Smith",
-        date: "April 5, 2023",
-        comment: "Lovely stay, close to everything we needed.",
-        avatar: "",
-        city: "Denver, CO",
+        name: "Cherie",
+        date: "October 2023",
+        comment:
+          "The space is just right for two people. Very comfortable and light filled. We often ate breakfast in and the kitchen had everything we needed. We love the glass electric kettle and an in-line filtered water system. No need to buy plastic bottles of water during our stay. We often had our breakfast out on the patio. It is a simple, private outdoor space with roses draping over the high neighboring fences. We could see trees laden with persimmons. I made a request to Jaime to improve my experience. (I am somewhat sensitive to fragrance.) He responded quickly and said he’ll make the change I requested. We look forward to returning to our little home-away-from-home.",
+        avatar:
+          "https://a0.muscache.com/im/pictures/user/e51f8761-db18-4579-9cf3-37a0d4b017ff.jpg?im_w=240",
+        city: "Seattle, Washington",
+      },
+      {
+        name: "Jae Seo",
+        date: "August 2023",
+        comment:
+          "It was a quiet and safe neighborhood. I had a very peaceful stay. Wifi was good so that I could work online during my stay. The small kitchen provided all the features I needed so I cooked several times. Thanks Jamie for the quick and clear communication. I highly recommend this place.",
+        avatar:
+          "https://a0.muscache.com/im/pictures/user/aefd53c4-b2ab-4d48-b31d-9d495f8559e8.jpg?im_w=240",
+        city: "August 2023",
+      },
+      {
+        name: "Neil",
+        date: "November 2023",
+        comment:
+          "We truly loved this place and a lot of privacy. Jaime and Geno responded to our texts/dms quickly, and helped out with out rubbish (trash/recycling). We used the kitchen a lot as we were able to cook our own meals, and also were able to prep for our Thanksgiving potlucks. Sorry if the aroma from our pumpkin and apple pies distracted y’all. The whole space was perfect and clean. I would reserve again if we’re in the SJ/SC area again. Big Mahalo to the hosts and space!",
+        avatar:
+          "https://a0.muscache.com/im/pictures/user/749f6b05-27c7-4e10-8fe9-a1684bfc41fc.jpg?im_w=240",
+        city: "Daly City, California",
       },
     ],
   },
