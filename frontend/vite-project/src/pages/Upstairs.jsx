@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, Box, Typography } from "@mui/material";
-import PhotoGallery from "../components/PhotoGallery";
 import accommodations from "../data/accommodationsData";
+import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
+import GuestReviews from "../components/GuestReviews";
 
 const Upstairs = () => {
   const accommodation = accommodations.find((acc) => acc.id === "upstairs");
@@ -10,12 +11,13 @@ const Upstairs = () => {
     <Container>
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" gutterBottom>
-          4 bedroom 3 bath - Low Cleaning Fee | DIA Airport | Patio
+          {accommodation.description}
         </Typography>
-        <PhotoGallery images={accommodation.images} />
+        <MultiRowImageCarousel images={accommodation.images} />
         <Typography variant="body1" sx={{ mt: 2 }}>
           Detailed description and amenities of the 4 bedroom 3 bath listing.
         </Typography>
+        <GuestReviews reviews={accommodation.reviews} />
       </Box>
     </Container>
   );

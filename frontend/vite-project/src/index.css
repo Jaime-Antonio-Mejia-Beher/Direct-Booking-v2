@@ -1,3 +1,6 @@
+/* Slick Carousel CSS */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 body {
   margin: 0;
   /* display: flex; */
@@ -5,6 +8,4 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-/* Slick Carousel CSS */
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+
