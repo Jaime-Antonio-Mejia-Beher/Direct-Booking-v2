@@ -145,9 +145,29 @@ const accommodations = [
       },
       {
         name: "Nicolas",
-        date: "April 5, 2023",
-        comment: "Lovely stay, close to everything we needed.",
+        date: "January 2024",
+        comment:
+          "Traveled for work and Jamie was an amazing host and it was a really nice and relaxing home to be able to stay in, it was very clean and comfortable.",
+        avatar:
+          "https://a0.muscache.com/im/pictures/user/2daa0249-f623-4dae-94fa-c98905b3c79c.jpg?im_w=240",
         city: "Lake Charles, Louisiana",
+      },
+      {
+        name: "Virginie",
+        date: "December 2022",
+        comment:
+          "This place exceeded our expectations! The decor was beautiful, the rooms were spacious, and our host Jaime kept in touch with us every step of the way. 10/10",
+        avatar:
+          "https://a0.muscache.com/im/pictures/user/244ddd04-8fbf-4577-9033-07658463f110.jpg?im_w=240",
+        city: "Jupiter, Florida",
+      },
+      {
+        name: "Ahmad",
+        date: "August 2023",
+        comment:
+          "Our 17-night stay at Jaime's home was an absolute delight. The four-bedroom, four-bathroom property offered ample space and comfort for my family. Its convenient location near Denver International Airport and 30 minutes to downtown Denver made it an ideal base for exploring the city. The home was fully equipped with all the necessary appliances, ensuring a seamless and convenient stay. The well-maintained backyard and patio provided a lovely outdoor retreat, perfect for relaxing and enjoying the pleasant weather. One aspect that truly stood out was Jaime's exceptional responsiveness and support throughout our stay. He promptly addressed any inquiries or concerns, ensuring we had a comfortable and enjoyable experience. Overall, Jaime's home exceeded our expectations. Its convenient location, well-appointed amenities, and Jaime's attentive hospitality made our stay truly memorable. I highly recommend this property to anyone seeking a fantastic home away from home in Denver.",
+        avatar: "https://a0.muscache.com/im/pictures/user/User-400867608/original/29274d5c-24bc-4db8-afa7-3e4a92c592c4.jpeg?im_w=240",
+          city: "",
       },
     ],
   },
