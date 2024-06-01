@@ -3,7 +3,7 @@ import { Container, Box, Typography } from "@mui/material";
 import accommodations from "../data/accommodationsData";
 import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
-import DetailedInfo from "../components/DetailedInfo";
+import BasementDetails from "../components/BasementDetails";
 
 const Basement = () => {
   const accommodation = accommodations.find((acc) => acc.id === "basement");
@@ -16,10 +16,10 @@ const Basement = () => {
         </Typography>
         <MultiRowImageCarousel images={accommodation.images} />
         <Typography variant="body1" sx={{ mt: 2 }}>
-          Detailed description and amenities of the private basement unit.
+          Detailed description and amenities of the 1 bedroom 1 bath listing.
         </Typography>
         <GuestReviews reviews={accommodation.reviews} />
-        <DetailedInfo />
+        <BasementDetails />
       </Box>
     </Container>
   );
