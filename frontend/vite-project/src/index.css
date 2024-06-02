@@ -9,3 +9,19 @@ body {
   min-height: 100vh;
 }
 
+.map-container {
+  width: 100%;
+}
+
+.map {
+  width: 100%;
+  height: 600px;
+}
+
+/* Media query for screens larger than 768px (e.g., tablets, desktops) */
+@media (min-width: 768px) {
+  .map-container {
+    width: 45%;
+  }
+}
+
