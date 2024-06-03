@@ -5,7 +5,8 @@ import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
 import BasementDetails from "../components/BasementDetails";
 import DenverMap from "../components/DenverMap";
-import BasementCalendar from "../components/BasementCalendar";
+// import BasementCalendar from "../components/BasementCalendar";
+import DateRangeCalendarValue from "../components/DatePicker";
 
 const Basement = () => {
   const accommodation = accommodations.find((acc) => acc.id === "basement");
@@ -20,9 +21,9 @@ const Basement = () => {
         <Typography variant="body1" sx={{ mt: 2 }}>
           Detailed description and amenities of the 1 bedroom 1 bath listing.
         </Typography>
-        <Box>
+        <Box sx={{display: 'flex'}}>
           <DenverMap />
-          <BasementCalendar />
+          <DateRangeCalendarValue />
         </Box>
         <GuestReviews reviews={accommodation.reviews} />
         <BasementDetails />
