@@ -13,7 +13,7 @@ const DenverMap = () => {
         center={position}
         zoom={16}
         className="map"
-        style={{ height: "400px" }}
+        style={{ height: "360px" }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -22,8 +22,8 @@ const DenverMap = () => {
         <Circle
           center={position}
           radius={radius}
-          color="blue"
-          fillColor="blue"
+          color="gold"
+          fillColor="gold"
           fillOpacity={0.2}
         />
       </MapContainer>

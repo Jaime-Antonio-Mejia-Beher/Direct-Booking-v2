@@ -5,7 +5,9 @@ import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
 import CupertinoDetails from "../components/CupertinoDetails";
 import CupertinoMap from "../components/CupertinoMap";
-import CupertinoCalendar from "../components/CupertinoCalendar"; // Import the CupertinoCalendar component
+// import CupertinoCalendar from "../components/CupertinoCalendar"; 
+import DateRangeCalendarValue from "../components/DatePicker";
+import "../index.css"; // Import your custom styles
 
 const Cupertino = () => {
   const accommodation = accommodations.find((acc) => acc.id === "cupertino");
@@ -17,12 +19,21 @@ const Cupertino = () => {
           {accommodation.description}
         </Typography>
         <MultiRowImageCarousel images={accommodation.images} />
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          Detailed description and amenities of the 1 bedroom 1 bath listing.
-        </Typography>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: 8,
+            mt: 10,
+            height: {
+              xs: "850px",
+              md: "400px",
+            },
+          }}
+        >
           <CupertinoMap />
-          <CupertinoCalendar />
+          <DateRangeCalendarValue/>
+          {/* <CupertinoCalendar /> */}
         </Box>
         <GuestReviews reviews={accommodation.reviews} />
         <CupertinoDetails />

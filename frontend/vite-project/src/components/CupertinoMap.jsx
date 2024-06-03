@@ -8,12 +8,11 @@ const CupertinoMap = () => {
 
   return (
     <div className="map-container">
-      <h1>Cupertino Location</h1>
       <MapContainer
         center={position}
-        zoom={19}
+        zoom={16}
         className="map"
-        style={{ height: "500px" }}
+        style={{ height: "360px" }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -22,8 +21,8 @@ const CupertinoMap = () => {
         <Circle
           center={position}
           radius={radius}
-          color="orange"
-          fillColor="orange"
+          color="gold"
+          fillColor="gold"
           fillOpacity={0.2}
         />
       </MapContainer>
