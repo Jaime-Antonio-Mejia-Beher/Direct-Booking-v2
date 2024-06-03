@@ -1,9 +1,9 @@
 /* Slick Carousel CSS */
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+
 body {
   margin: 0;
-  /* display: flex; */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -21,7 +21,28 @@ body {
 /* Media query for screens larger than 768px (e.g., tablets, desktops) */
 @media (min-width: 768px) {
   .map-container {
-    width: 45%;
+    width: 55%;
+    display: flex;
+    align-self: flex-start;
   }
 }
 
+.calendar-container {
+  width: 100%;
+}
+
+.calendar {
+  width: 100%;
+  height: 600px;
+}
+
+.rdrCalendarWrapper {
+  width: 100% !important;
+  height: 600px !important;
+  font-size: 15px;
+}
+@media (min-width: 768px) {
+  .calendar-container {
+    width: 55%;
+  }
+}

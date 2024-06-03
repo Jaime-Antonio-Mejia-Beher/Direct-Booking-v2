@@ -5,8 +5,8 @@ import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
 import BasementDetails from "../components/BasementDetails";
 import DenverMap from "../components/DenverMap";
-// import BasementCalendar from "../components/BasementCalendar";
 import DateRangeCalendarValue from "../components/DatePicker";
+import "../index.css"; // Import your custom styles
 
 const Basement = () => {
   const accommodation = accommodations.find((acc) => acc.id === "basement");
@@ -18,10 +18,20 @@ const Basement = () => {
           {accommodation.description}
         </Typography>
         <MultiRowImageCarousel images={accommodation.images} />
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          Detailed description and amenities of the 1 bedroom 1 bath listing.
-        </Typography>
-        <Box sx={{display: 'flex'}}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            // justifyContent: "center",
+            // alignItems: "center",
+            gap: 8,
+            mt: 10,
+            height: {
+              xs: '850px',
+              md: '400px'
+            }
+          }}
+        >
           <DenverMap />
           <DateRangeCalendarValue />
         </Box>

@@ -8,12 +8,12 @@ const DenverMap = () => {
 
   return (
     <div className="map-container">
-      <h1>My Location</h1>
+      {/* <h1>My Location</h1> */}
       <MapContainer
         center={position}
-        zoom={19}
+        zoom={16}
         className="map"
-        style={{ height: "500px" }}
+        style={{ height: "400px" }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
