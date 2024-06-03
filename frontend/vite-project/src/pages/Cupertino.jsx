@@ -5,6 +5,7 @@ import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
 import CupertinoDetails from "../components/CupertinoDetails";
 import CupertinoMap from "../components/CupertinoMap";
+import CupertinoCalendar from "../components/CupertinoCalendar"; // Import the CupertinoCalendar component
 
 const Cupertino = () => {
   const accommodation = accommodations.find((acc) => acc.id === "cupertino");
@@ -19,7 +20,10 @@ const Cupertino = () => {
         <Typography variant="body1" sx={{ mt: 2 }}>
           Detailed description and amenities of the 1 bedroom 1 bath listing.
         </Typography>
-        <CupertinoMap />
+        <Box>
+          <CupertinoMap />
+          <CupertinoCalendar />
+        </Box>
         <GuestReviews reviews={accommodation.reviews} />
         <CupertinoDetails />
       </Box>
