@@ -4,8 +4,7 @@ import accommodations from "../data/accommodationsData";
 import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
 import DetailedInfo from "../components/DetailedInfo";
-import Map from "../components/Map";
-
+import DenverMap from "../components/DenverMap";
 
 const Upstairs = () => {
   const accommodation = accommodations.find((acc) => acc.id === "upstairs");
@@ -20,7 +19,7 @@ const Upstairs = () => {
         <Typography variant="body1" sx={{ mt: 2 }}>
           Detailed description and amenities of the 4 bedroom 3 bath listing.
         </Typography>
-        <Map/>
+        <DenverMap />
         <GuestReviews reviews={accommodation.reviews} />
         <DetailedInfo />
       </Box>

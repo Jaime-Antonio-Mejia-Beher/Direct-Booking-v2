@@ -4,6 +4,7 @@ import accommodations from "../data/accommodationsData";
 import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
 import CupertinoDetails from "../components/CupertinoDetails";
+import CupertinoMap from "../components/CupertinoMap";
 
 const Cupertino = () => {
   const accommodation = accommodations.find((acc) => acc.id === "cupertino");
@@ -18,6 +19,7 @@ const Cupertino = () => {
         <Typography variant="body1" sx={{ mt: 2 }}>
           Detailed description and amenities of the 1 bedroom 1 bath listing.
         </Typography>
+        <CupertinoMap />
         <GuestReviews reviews={accommodation.reviews} />
         <CupertinoDetails />
       </Box>
