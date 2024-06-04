@@ -5,11 +5,13 @@ import MultiRowImageCarousel from "../components/MultiRowImageCarousel";
 import GuestReviews from "../components/GuestReviews";
 import CupertinoDetails from "../components/CupertinoDetails";
 import CupertinoMap from "../components/CupertinoMap";
-// import CupertinoCalendar from "../components/CupertinoCalendar"; 
-import DateRangeCalendarValue from "../components/DatePicker";
+// import DateRangeCalendarValue from "../components/DatePicker";
+import CupertinoAPI from "../api/CupertinoAPI";
 import "../index.css"; // Import your custom styles
 
-const Cupertino = () => {
+const Cupertino = ({ checkIn, checkOut }) => {
+   console.log("CupertinoPage checkIn:", checkIn);
+   console.log("CupertinoPage checkOut:", checkOut);
   const accommodation = accommodations.find((acc) => acc.id === "cupertino");
 
   return (
@@ -32,8 +34,8 @@ const Cupertino = () => {
           }}
         >
           <CupertinoMap />
-          <DateRangeCalendarValue/>
-          {/* <CupertinoCalendar /> */}
+          <CupertinoAPI />
+          {/* <DateRangeCalendarValue checkIn={checkIn} checkOut={checkOut} /> */}
         </Box>
         <GuestReviews reviews={accommodation.reviews} />
         <CupertinoDetails />
