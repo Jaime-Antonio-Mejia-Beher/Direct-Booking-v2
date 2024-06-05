@@ -1,12 +1,13 @@
+// vite.config.js
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-
+// Redirects requests from /api to the specified target aka the backend server at target: "https://localhost:5000"
 export default defineConfig({
-  plugins: [react()],
-  css: {
-    preprocessorOptions: {
-      css: {
-        additionalData: `@import "slick-carousel/slick/slick.css"; @import "slick-carousel/slick/slick-theme.css";`,
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://localhost:5000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "/v1"),
       },
     },
   },

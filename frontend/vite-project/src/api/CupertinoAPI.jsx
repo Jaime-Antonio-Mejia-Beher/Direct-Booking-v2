@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+import React from "react"; 
 import { useState, useEffect } from "react";
 import axios from "axios";
 import DateRangeCalendarValue from "../components/DatePicker";
@@ -6,20 +8,13 @@ export default function CupertinoAPI() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
-    const apiUrl = "https://api.pricelabs.co/v1/reservation_data?pms=airbnb";
-    const API_KEY = import.meta.env.VITE_API_KEY;
+    const apiUrl = "http://localhost:5000/api/reservation_data?pms=airbnb";
 
     axios
-      .get(apiUrl, {
-        headers: {
-          Authorization: `Bearer ${API_KEY}`,
-          Accept: "application/json",
-          "x-api-key": API_KEY,
-        },
-      })
+      .get(apiUrl)
       .then((response) => {
         let responseData = response.data;
-
+        console.log("responseData", responseData.data);
         let filteredData = responseData.data.filter(
           (item) =>
             item.listing_name ===
@@ -31,9 +26,11 @@ export default function CupertinoAPI() {
         );
 
         setReservations(filteredData);
+        console.log(filteredData)
+        console.log("Where are you console ninja?")
       })
       .catch((error) => {
-        console.error("Error fetching reservations data:", error);
+        console.error("Error fetching data:", error);
       });
   }, []);
 
