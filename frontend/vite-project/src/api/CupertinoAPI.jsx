@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import React from "react"; 
+import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import DateRangeCalendarValue from "../components/DatePicker";
@@ -8,13 +8,26 @@ export default function CupertinoAPI() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
-    const apiUrl = "http://localhost:5000/api/reservation_data?pms=airbnb";
+    const apiUrl = "http://localhost:5000/api/reservation_data";
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    const apiUrl = "http://localhost:5000/api/reservation_data";
+    //const apiUrl = "https://api.pricelabs.co/v1/reservation_data?pms=airbnb";
 
     axios
       .get(apiUrl)
       .then((response) => {
         let responseData = response.data;
-        console.log("responseData", responseData.data);
+        // console.log("responseData", responseData.data);
         let filteredData = responseData.data.filter(
           (item) =>
             item.listing_name ===
@@ -26,8 +39,8 @@ export default function CupertinoAPI() {
         );
 
         setReservations(filteredData);
-        console.log(filteredData)
-        console.log("Where are you console ninja?")
+        // console.log(filteredData);
+        // console.log("Where are you console ninja?");
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
