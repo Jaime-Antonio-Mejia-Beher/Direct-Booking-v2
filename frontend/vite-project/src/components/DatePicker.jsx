@@ -1,3 +1,4 @@
+import React from "react";
 import { DateRange } from "react-date-range";
 import { useState } from "react";
 import "../index.css"; // Import your custom styles
