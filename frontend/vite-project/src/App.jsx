@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
+// import Footer from './components/Footer';
 import Home from "./pages/Home";
 import Basement from "./pages/BasementPage";
 import Upstairs from "./pages/UpstairsPage";
 import Cupertino from "./pages/CupertinoPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/basement" element={<Basement />} />
           <Route path="/upstairs" element={<Upstairs />} />
           <Route path="/cupertino" element={<Cupertino />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </main>
       {/* <Footer /> */}

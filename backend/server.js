@@ -1,14 +1,15 @@
-// server.js
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
-//import { createProxyMiddleware } from "http-proxy-middleware";
+import Stripe from "stripe";
+
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3001;
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -32,29 +33,33 @@ app.get("/api/reservation_data", async (req, res) => {
     res.json(response.data);
   } catch (error) {
     console.error(error);
+    res.status(500).json({ error: "Failed to fetch reservation data" });
   }
 });
 
-/*app.use(
-  "/api",
-  createProxyMiddleware({
-    target: "https://api.pricelabs.co",
-    changeOrigin: true,
-    pathRewrite: { "^/api": "/v1" },
-    onProxyReq: (proxyReq, req, res) => {
-      proxyReq.setHeader("Accept", "application/json");
-      proxyReq.setHeader("X-API-Key", process.env.API_KEY);
-      console.log(`Final API URL: ${proxyReq.getHeader("host")}${req.url}`);
-      console.log("hello world");
-    },
-  })
-);
-*/
+app.post("/api/create-payment-intent", async (req, res) => {
+  try {
+    const { amount } = req.body;
+
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency: "usd",
+    });
+
+    res.send({
+      clientSecret: paymentIntent.client_secret,
+    });
+  } catch (error) {
+    console.error("Error creating payment intent:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
 });
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

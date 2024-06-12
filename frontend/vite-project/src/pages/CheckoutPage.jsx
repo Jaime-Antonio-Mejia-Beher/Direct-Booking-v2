@@ -18,7 +18,9 @@ import {
 import axios from "axios";
 
 // Stripe public key
-const stripePromise = loadStripe("your-stripe-public-key");
+const stripePromise = loadStripe(
+  "pk_live_51LugXWIB58RLoQdOuUOKRgWJRyQWv9Lcjju9KkHb9arGRWEmjwR0ol7mt3peSmXXX3xVamyRXeJDMg6hZLG2hRIa00c7pZKGNE"
+);
 
 const CheckoutForm = ({ accommodation, checkIn, checkOut }) => {
   const stripe = useStripe();
@@ -77,7 +79,7 @@ const CheckoutForm = ({ accommodation, checkIn, checkOut }) => {
     <Container component="main" maxWidth="sm">
       <Paper elevation={3} sx={{ padding: 3, marginTop: 3 }}>
         <Typography variant="h5" gutterBottom>
-          Book Your Stay at {accommodation.name}
+          Book Your Stay 
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>

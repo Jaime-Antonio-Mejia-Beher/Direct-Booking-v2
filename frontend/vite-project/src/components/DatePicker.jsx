@@ -1,16 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { DateRange } from "react-date-range";
-import { useState, useEffect } from "react";
 import "../index.css"; // Import your custom styles
 
-export default function DateRangeCalendarValue() {
-  // console.log("DateRangeCalendarValue checkIn:", checkIn);
-  // console.log("DateRangeCalendarValue checkOut:", checkOut);
+export default function DateRangeCalendarValue({ setDates }) {
   const [date, setDate] = useState([
     {
-      //startDate: new Date(checkIn),
-      //endDate: new Date(checkOut),
       startDate: new Date(),
       endDate: null,
       key: "selection",
@@ -26,13 +22,17 @@ export default function DateRangeCalendarValue() {
       },
     ]);
   }, []);
-  // console.log("DateRangeCalendarValue date:", date);
+
+  const handleDateChange = (item) => {
+    setDate([item.selection]);
+    setDates(item.selection);
+  };
 
   return (
     <div className="calendar-container">
       <DateRange
         editableDateInputs={true}
-        onChange={(item) => setDate([item.selection])}
+        onChange={(item) => handleDateChange(item)}
         moveRangeOnFirstSelection={false}
         ranges={date}
         className="calendar"
