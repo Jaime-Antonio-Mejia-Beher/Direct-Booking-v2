@@ -1,45 +1,35 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { CircularProgress, Typography } from "@mui/material";
+import DateRangeCalendarValue from "./DateRangeCalendarValue";
 
-const CupertinoCalendar = () => {
-  const [calendarData, setCalendarData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function ParentComponent() {
+  const [checkIn, setCheckIn] = useState(null);
+  const [checkOut, setCheckOut] = useState(null);
 
   useEffect(() => {
-    const fetchCalendarData = async () => {
-      const apiKey = "YOUR_API_KEY";
-      const apiUrl = "https://api.pricelabs.co/v1/calendar"; // Adjust the endpoint as needed
-
-      try {
-        const response = await axios.get(apiUrl, {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        });
-        setCalendarData(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching calendar data:", error);
-        setError(error);
-        setLoading(false);
-      }
-    };
-
-    fetchCalendarData();
+    axios
+      .get(
+        "https://api.pricelabs.co/v1/reservation_data?pms=igms&start_date=2020-01-01&end_date=2020-01-10&limit=100&offset=0&page=1"
+      )
+      .then((response) => {
+        // Assuming you're interested in the first reservation
+        const firstReservation = response.data.data[0];
+        setCheckIn(firstReservation.check_in);
+        setCheckOut(firstReservation.check_out);
+      })
+      .catch((error) => console.error("Error fetching data: ", error));
   }, []);
 
-  if (loading) return <CircularProgress />;
-  if (error)
-    return <Typography variant="body1">Error fetching data.</Typography>;
-
+  // Render the DateRangeCalendarValue component with the fetched dates
   return (
     <div>
-      <Typography variant="h6">Cupertino Calendar Data</Typography>
-      <pre>{JSON.stringify(calendarData, null, 2)}</pre>
+      {checkIn && checkOut ? (
+        <DateRangeCalendarValue checkIn={checkIn} checkOut={checkOut} />
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
-};
+}
 
-export default CupertinoCalendar;
+export default ParentComponent;

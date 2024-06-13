@@ -8,18 +8,17 @@ const DenverMap = () => {
 
   return (
     <div className="map-container">
-      {/* <h1>My Location</h1> */}
-      <MapContainer
+      <MapContainer 
         center={position}
         zoom={16}
         className="map"
         style={{ height: "360px" }}
       >
-        <TileLayer
+        <TileLayer // This is the map layer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Circle
+        <Circle 
           center={position}
           radius={radius}
           color="gold"
