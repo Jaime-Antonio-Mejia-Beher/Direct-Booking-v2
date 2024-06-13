@@ -8,26 +8,12 @@ export default function CupertinoAPI() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
-    const apiUrl = "http://localhost:5000/api/reservation_data";
-    axios
-      .get(apiUrl)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-  useEffect(() => {
-    const apiUrl = "http://localhost:5000/api/reservation_data";
-    //const apiUrl = "https://api.pricelabs.co/v1/reservation_data?pms=airbnb";
+    const apiUrl = "http://localhost:5000/api/reservation_data"; // This is the URL of the backend server
 
     axios
       .get(apiUrl)
       .then((response) => {
         let responseData = response.data;
-        // console.log("responseData", responseData.data);
         let filteredData = responseData.data.filter(
           (item) =>
             item.listing_name ===
@@ -38,9 +24,7 @@ export default function CupertinoAPI() {
           a.listing_name.localeCompare(b.listing_name)
         );
 
-        setReservations(filteredData);
-        // console.log(filteredData);
-        // console.log("Where are you console ninja?");
+        setReservations(filteredData); // This is the data that will be passed to the DateRangeCalendarValue component
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -48,8 +32,9 @@ export default function CupertinoAPI() {
   }, []);
 
   if (!reservations.length) {
-    return <div>Loading...</div>;
+    // If there are no reservations, display a message
+    return <div>No reservations</div>;
   }
-
+  // This is the DateRangeCalendarValue component that will display the reservations in DatePicker.jsx
   return <DateRangeCalendarValue reservations={reservations} />;
 }

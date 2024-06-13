@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 app.get("/api/reservation_data", async (req, res) => {
   try {
     const response = await axios.get(
-      `https://api.pricelabs.co/v1/reservation_data?pms=airbnb&start_date=2022-05-01&end_date=2026-06-10`,
+      `https://api.pricelabs.co/v1/reservation_data?pms=airbnb&start_date=2024-05-01&end_date=2026-06-10`,
       {
         headers: {
           "X-API-Key": process.env.API_KEY,
@@ -35,21 +35,21 @@ app.get("/api/reservation_data", async (req, res) => {
   }
 });
 
-/*app.use(
-  "/api",
-  createProxyMiddleware({
-    target: "https://api.pricelabs.co",
-    changeOrigin: true,
-    pathRewrite: { "^/api": "/v1" },
-    onProxyReq: (proxyReq, req, res) => {
-      proxyReq.setHeader("Accept", "application/json");
-      proxyReq.setHeader("X-API-Key", process.env.API_KEY);
-      console.log(`Final API URL: ${proxyReq.getHeader("host")}${req.url}`);
-      console.log("hello world");
-    },
-  })
-);
-*/
+// app.use(
+//   "/api",
+//   createProxyMiddleware({
+//     target: "https://api.pricelabs.co",
+//     changeOrigin: true,
+//     pathRewrite: { "^/api": "/v1" },
+//     onProxyReq: (proxyReq, req, res) => {
+//       proxyReq.setHeader("Accept", "application/json");
+//       proxyReq.setHeader("X-API-Key", process.env.API_KEY);
+//       console.log(`Final API URL: ${proxyReq.getHeader("host")}${req.url}`);
+//       console.log("hello world");
+//     },
+//   })
+// );
+
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
